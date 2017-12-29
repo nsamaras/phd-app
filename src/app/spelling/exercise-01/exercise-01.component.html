@@ -13,9 +13,10 @@
                 <div>τρω</div>
                 <div>τραυ</div>
                 <div>τρει</div>
+                <div>τρι</div>
                 <div>τρου</div>
             </div>
-
+            
             <div class='container' [dragula]='"bag-task1"'></div>      
             <div>-γα-νό</div> 
            
@@ -50,5 +51,8 @@
             <div>-φα</div>
             
     </div>
+    <div *ngIf="isCorrectAnswer">
+        <button class="btn btn-success" (click)="onClick()" >Next</button>
+    </div>
+    
   </div>
-  <hr>

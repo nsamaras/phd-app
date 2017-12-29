@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
+import { SpellingService } from '../services/spelling.service';
 
 @Component({
   selector: 'app-exercise-01',
@@ -7,8 +8,11 @@ import { DragulaService } from 'ng2-dragula/ng2-dragula';
   styleUrls: ['./exercise-01.component.css']
 })
 export class Exercise01Component implements OnInit {
-
-  constructor(private dragulaService: DragulaService) {
+  answer ='';
+  isCorrectAnswer: boolean = false;
+  
+  constructor(private dragulaService: DragulaService,
+            private spellingService: SpellingService) {
     
         dragulaService.setOptions('bag-task1', {
           removeOnSpill: true         
@@ -19,10 +23,19 @@ export class Exercise01Component implements OnInit {
         dragulaService.setOptions('bag-task3', {
           revertOnSpill: true,
         });
-        
+
+        dragulaService.drop.subscribe((value) => {
+          console.log('innerHTML',value[1].innerHTML); // the item which was dragged  
+          this.answer = this.answer.concat(value[1].innerHTML);
+          console.log(this.answer);
+          //this.isCorrectAnswer = this.spellingService.isCorrectExcercise01(this.answer)
+          this.isCorrectAnswer = true;
+        });
     }
 
   ngOnInit() {
   }
-
+  onClick() {
+    console.log('Click next btn')
+  }
 }

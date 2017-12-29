@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -8,12 +9,15 @@ import { RouterModule } from '@angular/router';
 import { DragulaModule } from 'ng2-dragula';
 import { SpellingComponent } from './spelling/spelling.component';
 import { Exercise01Component } from './spelling/exercise-01/exercise-01.component';
+import { SpellingService } from './spelling/services/spelling.service';
+import { Exercise02Component } from './spelling/exercise-02/exercise-02.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpellingComponent,
-    Exercise01Component    
+    Exercise01Component,
+    Exercise02Component    
   ],
   imports: [
     BrowserModule,  
@@ -23,6 +27,7 @@ import { Exercise01Component } from './spelling/exercise-01/exercise-01.componen
     HttpModule
   ],
   providers: [ 
+    SpellingService
   ],
   bootstrap: [AppComponent]
 })
