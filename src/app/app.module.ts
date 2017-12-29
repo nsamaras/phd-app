@@ -7,11 +7,13 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DragulaModule } from 'ng2-dragula';
 import { SpellingComponent } from './spelling/spelling.component';
+import { Exercise01Component } from './spelling/exercise-01/exercise-01.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpellingComponent    
+    SpellingComponent,
+    Exercise01Component    
   ],
   imports: [
     BrowserModule,  
