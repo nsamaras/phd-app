@@ -4,8 +4,8 @@
     <div class='wrapper'>      
          
             <div class='container' [dragula]='"bag-task1"' >
-                <div *ngFor="let answer of answers">
-                    {{answer}}
+                <div *ngFor="let choice of choices">
+                    <div id={{choice.id}}>{{choice.str}}</div>
                 </div>                
             </div>
             <div *ngFor="let choice of choices">
@@ -44,6 +44,7 @@
             <div>-φα</div>
             
     </div>
+    <hr>
     <div *ngIf="isCorrectAnswer">
         <button class="btn btn-success" [routerLink]="['/exercise-02']" >Next</button>
     </div>

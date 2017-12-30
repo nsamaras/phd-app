@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
 import { SpellingService } from '../services/spelling.service';
+import { Syllable } from '../../common/model/syllable.model';
 
 @Component({
   selector: 'app-exercise-01',
@@ -9,32 +10,25 @@ import { SpellingService } from '../services/spelling.service';
 })
 export class Exercise01Component implements OnInit {
   title = '';
-  answers: any[];    
-  answer ='';
+  choices:  Syllable[];    
+  answer : number[] = new Array();
   isCorrectAnswer: boolean = false;
   
   constructor(private dragulaService: DragulaService,
             private spellingService: SpellingService) {
 
         this.title = spellingService.getTitleExercise01();
-        this.answers = spellingService.getAnswersExercise01();        
+        this.choices = spellingService.getChoicesExercise01(); 
 
-        dragulaService.setOptions('bag-task1', {
-          removeOnSpill: true         
-        });
-        dragulaService.setOptions('bag-task2', {
-          revertOnSpill: true,
-        });
-        // dragulaService.setOptions('bag-task3', {
-        //   revertOnSpill: true,
-        // });
-
-        dragulaService.drop.subscribe((value) => {
-          console.log('innerHTML',value[1].innerHTML); // the item which was dragged  
-          this.answer = this.answer.concat(value[1].innerHTML);
+        dragulaService.drop.subscribe((value) => {           
+          let str = value[1].innerText;
+          let id = spellingService.getIdExe01(str.trim());
+          this.answer.push(id);        
+          
           console.log(this.answer);
-          //this.isCorrectAnswer = this.spellingService.isCorrectExcercise01(this.answer)
+          //this.isCorrectAnswer = this.spellingService.isCorrectOrder(this.answer)
           this.isCorrectAnswer = true;
+          return this.isCorrectAnswer;
         });
     }
 
