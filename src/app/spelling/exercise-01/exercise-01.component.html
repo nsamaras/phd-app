@@ -1,22 +1,15 @@
 
-<h3>Σύρε τη συλλαβή που λείπει, για να ολοκληρωθεί η λέξη.</h3>
+<h3>{{title}}}</h3>
 <div>
     <div class='wrapper'>      
          
             <div class='container' [dragula]='"bag-task1"' >
-                <div>τρα</div>
-                <div>τρε</div>
-                <div>τρη</div>
-                <div>τρι</div>
-                <div>τρο</div>
-                <div>τρυ</div>
-                <div>τρω</div>
-                <div>τραυ</div>
-                <div>τρει</div>
-                <div>τρι</div>
-                <div>τρου</div>
+                <div *ngFor="let answer of answers">
+                    {{answer}}
+                </div>                
             </div>
-            
+            <div *ngFor="let choice of choices">
+            </div>
             <div class='container' [dragula]='"bag-task1"'></div>      
             <div>-γα-νό</div> 
            

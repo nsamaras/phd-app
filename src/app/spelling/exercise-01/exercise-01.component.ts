@@ -8,21 +8,26 @@ import { SpellingService } from '../services/spelling.service';
   styleUrls: ['./exercise-01.component.css']
 })
 export class Exercise01Component implements OnInit {
+  title = '';
+  answers: any[];    
   answer ='';
   isCorrectAnswer: boolean = false;
   
   constructor(private dragulaService: DragulaService,
             private spellingService: SpellingService) {
-    
+
+        this.title = spellingService.getTitleExercise01();
+        this.answers = spellingService.getAnswersExercise01();        
+
         dragulaService.setOptions('bag-task1', {
           removeOnSpill: true         
         });
         dragulaService.setOptions('bag-task2', {
           revertOnSpill: true,
         });
-        dragulaService.setOptions('bag-task3', {
-          revertOnSpill: true,
-        });
+        // dragulaService.setOptions('bag-task3', {
+        //   revertOnSpill: true,
+        // });
 
         dragulaService.drop.subscribe((value) => {
           console.log('innerHTML',value[1].innerHTML); // the item which was dragged  
@@ -35,7 +40,5 @@ export class Exercise01Component implements OnInit {
 
   ngOnInit() {
   }
-  onClick() {
-    console.log('Click next btn')
-  }
+ 
 }
