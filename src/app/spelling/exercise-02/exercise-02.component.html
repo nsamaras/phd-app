@@ -1,0 +1,26 @@
+
+<h3>Προσπάθησε να συλλαβίσεις τις παρακάτω λέξεις.</h3>
+<div>
+    <div class='wrapper'>      
+      
+            <div [dragula]='"fifth-bag"' >
+                <div>α</div>
+                <div>πο</div>  
+                <div>τρα</div> 
+                <div>βώ</div> 
+            </div>
+            
+            <div class='container' [dragula]='"fifth-bag"'></div>      
+            <div>-</div> 
+            <div class='container' [dragula]='"fifth-bag"'></div>      
+            <div>-</div>
+            <div class='container' [dragula]='"fifth-bag"'></div>      
+            <div>-</div>
+            <div class='container' [dragula]='"fifth-bag"'></div>      
+           
+    </div>
+    <div *ngIf="isCorrectAnswer">
+        <button class="btn btn-success" [routerLink]="['/exercise-02']" >Next</button>
+    </div>
+    
+  </div>
