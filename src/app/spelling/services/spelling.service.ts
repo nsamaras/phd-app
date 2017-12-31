@@ -4,6 +4,7 @@ import { Syllable } from '../../common/model/syllable.model';
 
 @Injectable()
 export class SpellingService {
+  constructor() { }
 
   exercise01Answer = 'τρατρετρητριτροτρυτρωτραυτρειτριτρου'
 
@@ -19,32 +20,30 @@ export class SpellingService {
                                 new Syllable(11, 'τρι'),
                                 new Syllable(12, 'τρου')
                               ];    
+  
+  exercise01: Syllable[] = [new Syllable(20, '-γα-νό'),   
+                              new Syllable(21, '-μω'),
+                              new Syllable(22, '-μα-τα'),
+                              new Syllable(23, '-γυ-ρί-ζω'),
+                              new Syllable(24, '-μά-ρα'),
+                              new Syllable(25, '-πα'),
+                              new Syllable(26, '-ω'),
+                              new Syllable(27, '-μα-τι-σμός'),
+                              new Syllable(28, '-ς'),
+                              new Syllable(29, '-αι-να'),
+                              new Syllable(30, '-φα')
+                            ];
 
-  constructor() { }
-
-  isCorrectOrder(values: number[]) {
-    for(let x=0; x<values.length; x++) {
-        if(values[x] > values[x+1]) {
-            return false;
-        }
-    }
-    return true;
+  isCorrectOrder (answer) {
+    return answer === this.exercise01Answer ? true : false;
   }
 
-  getTitleExercise01() {
-    return 'Σύρε τη συλλαβή που λείπει, για να ολοκληρωθεί η λέξη.';
+  getExcercise01 () {
+    return this.exercise01;
   }
 
-  getChoicesExercise01() {
+  getChoicesExercise01 () {
     return this.choicesExe01;
   } 
 
-  getIdExe01(value) {     
-     for(let x=0; x<this.choicesExe01.length; x++) {
-        if(this.choicesExe01[x].str === value) {
-          return this.choicesExe01[x].id;          
-        }
-     }
-  }
- 
 }

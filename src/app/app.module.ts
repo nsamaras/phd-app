@@ -11,19 +11,22 @@ import { SpellingComponent } from './spelling/spelling.component';
 import { Exercise01Component } from './spelling/exercise-01/exercise-01.component';
 import { SpellingService } from './spelling/services/spelling.service';
 import { Exercise02Component } from './spelling/exercise-02/exercise-02.component';
+import { Exercise03Component } from './spelling/exercise-03/exercise-03.component';
 
 //My Routers 
 const appRoutes: Routes = [  
   {path:'', component: Exercise01Component},
   {path:'exercise-01', component: Exercise01Component},
-  {path:'exercise-02', component: Exercise02Component}
+  {path:'exercise-02', component: Exercise02Component},
+  {path:'exercise-03', component: Exercise03Component}
 ]
 @NgModule({
   declarations: [
     AppComponent,
     SpellingComponent,
     Exercise01Component,
-    Exercise02Component    
+    Exercise02Component,
+    Exercise03Component    
   ],
   imports: [
     BrowserModule,  
