@@ -6,7 +6,22 @@ import { Syllable } from '../../common/model/syllable.model';
 export class SpellingService {
   constructor() { }
 
+  //**** EXERCISE-01 ****
+
   exercise01Answer = 'τρατρετρητριτροτρυτρωτραυτρειτριτρου'
+
+  exercise01: Syllable[] = [new Syllable(20, '-γα-νό'),   
+                              new Syllable(21, '-μω'),
+                              new Syllable(22, '-μα-τα'),
+                              new Syllable(23, '-γυ-ρί-ζω'),
+                              new Syllable(24, '-μά-ρα'),
+                              new Syllable(25, '-πα'),
+                              new Syllable(26, '-ω'),
+                              new Syllable(27, '-μα-τι-σμός'),
+                              new Syllable(28, '-ς'),
+                              new Syllable(29, '-αι-να'),
+                              new Syllable(30, '-φα')
+                            ];
 
   choicesExe01: Syllable[] =  [ new Syllable(1, 'τρα'),   
                                 new Syllable(2, 'τρε'),
@@ -21,18 +36,6 @@ export class SpellingService {
                                 new Syllable(12, 'τρου')
                               ];    
   
-  exercise01: Syllable[] = [new Syllable(20, '-γα-νό'),   
-                              new Syllable(21, '-μω'),
-                              new Syllable(22, '-μα-τα'),
-                              new Syllable(23, '-γυ-ρί-ζω'),
-                              new Syllable(24, '-μά-ρα'),
-                              new Syllable(25, '-πα'),
-                              new Syllable(26, '-ω'),
-                              new Syllable(27, '-μα-τι-σμός'),
-                              new Syllable(28, '-ς'),
-                              new Syllable(29, '-αι-να'),
-                              new Syllable(30, '-φα')
-                            ];
 
   isCorrectOrder (answer) {
     return answer === this.exercise01Answer ? true : false;
@@ -46,4 +49,20 @@ export class SpellingService {
     return this.choicesExe01;
   } 
 
+  //**** EXERCISE-02 ****
+exercise02Answer = [{title:'first', word:'αποτραβώ'},
+                    {title:'second', word:'ανατρέπω'},
+                    {title:'third', word:'καταμέτρηση'},
+                    {title:'fourth', word:'ιατρική'},
+                    {title:'fifth', word:'δίμετρος'},
+                    {title:'sixth', word:'τρυπάνι'},
+                    {title:'seventh', word:'αναμετρώ'},
+                    {title:'eighth', word:'τραύμα'},
+                    {title:'ninth', word:'τραύμα'},
+                    {title:'tenth', word:'λατρεία'},
+                    {title:'eleventh', word:'γεωμετρία'},
+                    {title:'twelfth', word:'τρούλος'},
+                    {title:'thirteenth', word:'Μάρτιος'}
+
+      ];
 }
