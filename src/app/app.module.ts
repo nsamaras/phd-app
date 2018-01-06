@@ -12,6 +12,7 @@ import { Exercise01Component } from './spelling/exercise-01/exercise-01.componen
 import { SpellingService } from './spelling/services/spelling.service';
 import { Exercise02Component } from './spelling/exercise-02/exercise-02.component';
 import { Exercise03Component } from './spelling/exercise-03/exercise-03.component';
+import { ServiceExercise02Service } from './spelling/exercise-02/services/service-exercise02.service';
 
 //My Routers 
 const appRoutes: Routes = [  
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [ 
-    SpellingService
+    SpellingService,
+    ServiceExercise02Service
   ],
   bootstrap: [AppComponent]
 })

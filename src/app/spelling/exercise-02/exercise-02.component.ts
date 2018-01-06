@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SpellingService } from '../services/spelling.service';
 import { DragulaService } from 'ng2-dragula/ng2-dragula';
+import { Exercise02Model } from './model/exercise02.model';
+import { ServiceExercise02Service } from './services/service-exercise02.service';
 
 @Component({
   selector: 'app-exercise-02',
@@ -13,22 +15,41 @@ export class Exercise02Component implements OnInit {
   title = 'Testing ng2-dragula';
   options: any = {
     removeOnSpill: true
-}
-  constructor(private dragulaService: DragulaService,
-    private spellingService: SpellingService) {
-      
-    
-      dragulaService.drop.subscribe((value) => {        
-        console.log(value.slice(1));
-        let choice = value.slice(1)[1];
-        console.log(choice.id, choice.innerText);
-      });      
   }
- 
+
+  
+  
+  constructor(private dragulaService: DragulaService,
+    private service: ServiceExercise02Service) {
+      dragulaService.drop.subscribe((value) => {
+        this.onOver(value.slice(2));
+      });
+       
+  }
+  private onOver(args) {
+    let answers: string[] = [];
+    let [e, el, container] = args;
+    let text = (e.innerText).trim();
+    let fromId = el.id
+    let toId = e.id
+    let title = e.title;
+
+    let letters:string[] = this.service.getByTitle(title);
+    if (letters!== null) {
+      answers = letters;
+    }
+
+    console.log(el.id, e.id);     
+    
+    answers[toId] = text.trim();    
+    if(el.id !== "inline") {
+      let str = el.innerText;      
+      answers[fromId] = str.trim();
+    }
+    console.log(answers);
+     this.service.save(e.title, answers)
+  }
  
   ngOnInit() {
   }
-
- 
-
 }
