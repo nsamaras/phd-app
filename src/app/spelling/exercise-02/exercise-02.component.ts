@@ -16,9 +16,8 @@ export class Exercise02Component implements OnInit {
   options: any = {
     removeOnSpill: true
   }
-
-  
-  
+  ngOnInit() {
+  }
   constructor(private dragulaService: DragulaService,
     private service: ServiceExercise02Service) {
       dragulaService.drop.subscribe((value) => {
@@ -29,7 +28,8 @@ export class Exercise02Component implements OnInit {
   private onOver(args) {
     let answers: string[] = [];
     let [e, el, container] = args;
-    let text = (e.innerText).trim();
+    let text = (e.innerText).replace(/\s/g, '');
+    console.log(text)
     let fromId = el.id
     let toId = e.id
     let title = e.title;
@@ -38,18 +38,14 @@ export class Exercise02Component implements OnInit {
     if (letters!== null) {
       answers = letters;
     }
-
-    console.log(el.id, e.id);     
-    
-    answers[toId] = text.trim();    
+    // console.log(el.id, e.id);    
+    answers[toId] = text;    
     if(el.id !== "inline") {
       let str = el.innerText;      
-      answers[fromId] = str.trim();
+      answers[fromId] = str.replace(/\s/g, '');
     }
     console.log(answers);
-     this.service.save(e.title, answers)
-  }
- 
-  ngOnInit() {
+    this.service.save(e.title, answers);
+    this.isCorrectAnswer = this.service.isCorrectOrder();
   }
 }

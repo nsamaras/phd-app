@@ -49,20 +49,5 @@ export class SpellingService {
     return this.choicesExe01;
   } 
 
-  //**** EXERCISE-02 ****
-exercise02Answer = [{title:'first', word:'αποτραβώ'},
-                    {title:'second', word:'ανατρέπω'},
-                    {title:'third', word:'καταμέτρηση'},
-                    {title:'fourth', word:'ιατρική'},
-                    {title:'fifth', word:'δίμετρος'},
-                    {title:'sixth', word:'τρυπάνι'},
-                    {title:'seventh', word:'αναμετρώ'},
-                    {title:'eighth', word:'τραύμα'},
-                    {title:'ninth', word:'τραύμα'},
-                    {title:'tenth', word:'λατρεία'},
-                    {title:'eleventh', word:'γεωμετρία'},
-                    {title:'twelfth', word:'τρούλος'},
-                    {title:'thirteenth', word:'Μάρτιος'}
 
-      ];
 }
