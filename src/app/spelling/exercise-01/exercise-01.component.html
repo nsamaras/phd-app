@@ -1,51 +1,51 @@
 
 <h3>Σύρε τη συλλαβή που λείπει, για να ολοκληρωθεί η λέξη.</h3>
 <div>
-    <div class='wrapper'>      
-         
-            <div class='container' [dragula]='"bag-task1"' >
-                <div *ngFor="let choice of choices">
-                    <div id={{choice.id}} id="containerLeft">{{choice.str}}</div>
-                </div>                
-            </div>
-            
-            <div class='container' [dragula]='"bag-task1"' id='20' ></div>      
-            <div>-γα-νό</div> 
-           
-            <div class='container' [dragula]='"bag-task1"' id='21'></div>      
-            <div>-μω</div>  
-            
-            <div class='container' [dragula]='"bag-task1"' id='22'></div>      
-            <div>-μα-τα</div> 
-            
-            <div class='container' [dragula]='"bag-task1"' id='23'></div>      
-            <div>-γυ-ρί-ζω</div> 
+  <div  id="flex-container" class='container' [dragula]='"bag-task1"' >
+    <div class="flex-item" *ngFor="let choice of choices">
+      <div id={{choice.id}} id="containerLeft">{{choice.str}}</div>
+    </div>
+  </div>
+  
+  <div class='wrapper'>
 
-            <div class='container' [dragula]='"bag-task1"' id='24'></div>      
-            <div>-μά-ρα</div> 
+            <div class='container' [dragula]='"bag-task1"' id='20' ></div>
+            <div>-γα-νό</div>
 
-            <div class='container' [dragula]='"bag-task1"' id='25'></div>      
+            <div class='container' [dragula]='"bag-task1"' id='21'></div>
+            <div>-μω</div>
+
+            <div class='container' [dragula]='"bag-task1"' id='22'></div>
+            <div>-μα-τα</div>
+
+            <div class='container' [dragula]='"bag-task1"' id='23'></div>
+            <div>-γυ-ρί-ζω</div>
+
+            <div class='container' [dragula]='"bag-task1"' id='24'></div>
+            <div>-μά-ρα</div>
+
+            <div class='container' [dragula]='"bag-task1"' id='25'></div>
             <div>-πα</div>
 
-            <div class='container' [dragula]='"bag-task1"' id='26'></div>      
+            <div class='container' [dragula]='"bag-task1"' id='26'></div>
             <div>-ω</div>
 
-            <div class='container' [dragula]='"bag-task1"' id='27'></div>      
+            <div class='container' [dragula]='"bag-task1"' id='27'></div>
             <div>-μα-τι-σμός</div>
 
-            <div class='container' [dragula]='"bag-task1"' id='28'></div>      
+            <div class='container' [dragula]='"bag-task1"' id='28'></div>
             <div>-ς</div>
 
-            <div class='container' [dragula]='"bag-task1"' id='29'></div>      
+            <div class='container' [dragula]='"bag-task1"' id='29'></div>
             <div>-αι-να</div>
 
-            <div class='container' [dragula]='"bag-task1"' id='30'></div>      
+            <div class='container' [dragula]='"bag-task1"' id='30'></div>
             <div>-φα</div>
-             
     </div>
+
     <hr>
     <div *ngIf="isCorrectAnswer">
         <button class="btn btn-success" [routerLink]="['/exercise-02']" >Next</button>
     </div>
-    
+
   </div>

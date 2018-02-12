@@ -1,26 +1,42 @@
 
 <h3>Σύρε τη συλλαβή που λείπει, για να ολοκληρωθεί η λέξη.</h3>
 <div>
-    <div class='wrapper'>      
-      
-            <div [dragula]='"bag-task3"' >
-                <div>α</div>
-                <div>πο</div>  
-                <div>τρα</div> 
-                <div>βώ</div> 
-            </div>
-            
-            <div class='container' [dragula]='"bag-task3"'></div>      
-            <div>-</div> 
-            <div class='container' [dragula]='"bag-task3"'></div>      
-            <div>-</div>
-            <div class='container' [dragula]='"bag-task3"'></div>      
-            <div>-</div>
-            <div class='container' [dragula]='"bag-task3"'></div>      
-           
+    <div  id="flex-container" class='container' [dragula]='"bag-task1"' >
+      <div class="flex-item" *ngFor="let choice of choices">
+        <div id={{choice.id}} id="containerLeft">{{choice.str}}</div>
+      </div>
     </div>
-    <div *ngIf="isCorrectAnswer">
-        <button class="btn btn-success" [routerLink]="['/exercise-04']" >Next</button>
-    </div>
-    
+  
+α-μα…..  
+κου-βε…..-ρα 
+
+    <div class='wrapper'>
+     
+        ε-ξώ-πο<div class='container' [dragula]='"bag-task1"' id='20'></div>
+
+        κα-<div class='container' [dragula]='"bag-task1"' id='21'></div>-λα
+        
+
+        α-<div class='container' [dragula]='"bag-task1"' id='22'></div>
+        <div>-ρί-α</div>
+
+        α-φό-<div class='container' [dragula]='"bag-task1"' id='23'></div>
+        <div>-στο</div>
+
+        α-λου-μι-νό-χα<div class='container' [dragula]='"bag-task1"' id='24'></div>        
+
+        μα-<div class='container' [dragula]='"bag-task1"' id='25'></div>
+        <div>-ρώ</div>
+
+        ξε-φό-<div class='container' [dragula]='"bag-task1"' id='26'></div>
+        <div>-μα</div>
+
+        χο-<div class='container' [dragula]='"bag-task1"' id='27'></div>
+        <div>-νω</div>
+
+        α-μα<div class='container' [dragula]='"bag-task1"' id='28'></div>-ρα
+       
+        
+</div>
+
   </div>
